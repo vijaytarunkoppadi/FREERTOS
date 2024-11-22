@@ -11,7 +11,7 @@ void Task1(void *arg)
     while(1){
         count++;
         printf("Task1 printing..\n");
-        vTaskDelay(1000/ portTICK_RATE_MS);
+        vTaskDelay(1000/  portTICK_PERIOD_MS);
         if (count == 5)
         {
           vTaskSuspend(myTaskHandle2);              // when count reach 5 task2 suspends
@@ -34,7 +34,7 @@ void Task2(void *arg)
 {
     for(int i=0;i<10;i++){
         printf("Task2 printing..\n");
-        vTaskDelay(1000/ portTICK_RATE_MS);
+        vTaskDelay(1000/  portTICK_PERIOD_MS);
     }
 }
 
