@@ -11,7 +11,7 @@ void Task1(void *arg)
     while(1){
         count++;
         printf("Task1 printing..\n");
-        vTaskDelay(1000/ portTICK_RATE_MS);
+        vTaskDelay(1000/  portTICK_PERIOD_MS);
         if (count == 5)                               // after 5 counts vTaskDelete function delete the Task2
         {
           vTaskDelete(myTaskHandle2);
@@ -24,7 +24,7 @@ void Demo_Task2(void *arg)               // 5 times task2 printing happen at ini
 {
     for(int i=0;i<5;i++){
         printf("Task2 printing..\n");
-        vTaskDelay(1000/ portTICK_RATE_MS);
+        vTaskDelay(1000/  portTICK_PERIOD_MS);
     }
 }
 
