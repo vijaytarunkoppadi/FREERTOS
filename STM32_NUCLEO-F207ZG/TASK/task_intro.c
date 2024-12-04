@@ -307,7 +307,7 @@ static void MX_GPIO_Init(void)
 static void task1(void *arg){
 	while(1){
 		printf("%s\r\n",(char*)arg);
-		taskYIELD();
+		taskYIELD();				// if configUSE_PREEMPTION is 0 then we can switch content using this function
 		//vTaskDelay(100);
 	}
 }
@@ -315,7 +315,7 @@ static void task1(void *arg){
 static void task2(void *arg){
 	while(1){
 		printf("%s\r\n",(char*)arg);
-		taskYIELD();
+		taskYIELD();				// if configUSE_PREEMPTION is 0 then we can switch content using this function
 		//vTaskDelay(100);
 	}
 }
